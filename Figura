@@ -1,0 +1,170 @@
+package Figura;
+
+public class Figura {
+    protected float perimetro,area,volumen;
+
+    public Figura(float perimetro, float area, float volumen) {
+        this.perimetro = perimetro;
+        this.area = area;
+        this.volumen = volumen;
+    }
+
+    public float getPerimetro() {
+        return perimetro;
+    }
+
+    public float getArea() {
+        return area;
+    }
+
+    public float getVolumen() {
+        return volumen;
+    }
+    
+    public String mostrarDatos(){
+        return "Perimetro: "+perimetro+"\nArea: "+area+"\nVolumen: "+volumen;
+    }
+}
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+package Figura;
+
+public class Figura_Circulo extends Figura {
+    private float radio;
+    private String color;
+
+    public Figura_Circulo(float radio, String color, float perimetro, float area, float volumen) {
+        super(perimetro, area, volumen);
+        this.radio = radio;
+        this.color = color;
+    }
+
+    public float getRadio() {
+        return radio;
+    }
+
+    public String getColor() {
+        return color;
+    }
+    
+    @Override
+    public String mostrarDatos(){
+        return "Perimetro: "+perimetro+"\nArea: "+area+"\nVolumen: "+volumen
+                +"\nRadio: "+radio+"\nColor: "+color;
+    }
+}
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+package Figura;
+
+public class Figura_Cuadrado extends Figura{
+    private int lados;
+    private String color;
+
+    public Figura_Cuadrado(int lados, String color, float perimetro, float area, float volumen) {
+        super(perimetro, area, volumen);
+        this.lados = lados;
+        this.color = color;
+    }
+
+    public int getLados() {
+        return lados;
+    }
+
+    public String getColor() {
+        return color;
+    }
+    
+    @Override
+    public String mostrarDatos(){
+        return "Perimetro: "+perimetro+"\nArea: "+area+"\nVolumen: "+volumen
+                +"\nLados: "+lados+"\nColor: "+color;
+    }
+    
+}
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+package Figura;
+
+public class Figura_Rectangulo extends Figura{
+    private int vertices;
+    private String color;
+
+    public Figura_Rectangulo(int vertices, String color, float perimetro, float area, float volumen) {
+        super(perimetro, area, volumen);
+        this.vertices = vertices;
+        this.color = color;
+    }
+
+    public int getVertices() {
+        return vertices;
+    }
+
+    public String getColor() {
+        return color;
+    }
+    
+    @Override
+    public String mostrarDatos(){
+        return "Perimetro: "+perimetro+"\nArea: "+area+"\nVolumen: "+volumen
+                +"\nVertices : "+vertices+"\nColor: "+color;
+    }
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+package Figura;
+
+public class Figura_Triangulo extends Figura {
+    private String tipo,color;
+
+    public Figura_Triangulo(String tipo, String color, float perimetro, float area, float volumen) {
+        super(perimetro, area, volumen);
+        this.tipo = tipo;
+        this.color = color;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public String getColor() {
+        return color;
+    }
+    
+    @Override
+    public String mostrarDatos(){
+        return "Perimetro: "+perimetro+"\nArea: "+area+"\nVolumen: "+volumen
+                +"\nTipo : "+tipo+"\nColor: "+color;
+    }
+    
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+package Figura;
+
+public class Main {
+    public static void main (String []args){
+        Figura figura[] = new Figura[5];
+        
+        figura[0] = new Figura(5.6f,2.3f,6.5f);
+        figura[1] = new Figura_Circulo(3.14f,"Amarillo",5.6f,2.3f,6.5f);
+        figura[2] = new Figura_Cuadrado(3,"Rojo",5.6f,2.3f,6.5f);
+        figura[3] = new Figura_Rectangulo(4,"Azul",5.6f,2.3f,6.5f);
+        figura[4] = new Figura_Triangulo("Equilatero","Azul",5.6f,2.3f,6.5f);
+        for(Figura figuras: figura){
+            System.out.println(figuras.mostrarDatos());
+            System.out.println("");
+        }
+    }
+}
