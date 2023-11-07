@@ -1,0 +1,154 @@
+package Animal;
+
+public class Animal {
+    protected String raza, color, habitad;
+    protected int tamaño;
+
+    public Animal(String raza, String color, String habitad, int tamaño) {
+        this.raza = raza;
+        this.color = color;
+        this.habitad = habitad;
+        this.tamaño = tamaño;
+    }
+
+    public String getRaza() {
+        return raza;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public String getHabitad() {
+        return habitad;
+    }
+
+    public int getTamaño() {
+        return tamaño;
+    }
+    
+    public String mostrarDatos(){
+        
+        return "Raza: "+raza+"\nColor: "+color+"\nTamaño: "+tamaño+"\nHabitad: "+habitad;
+        
+    }
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+package Animal;
+
+
+public class Animal_Delfin extends Animal{
+    private String taxonomia,sexo;
+
+    public Animal_Delfin(String taxonomia, String sexo, String raza, String color, String habitad, int tamaño) {
+        super(raza, color, habitad, tamaño);
+        this.taxonomia = taxonomia;
+        this.sexo = sexo;
+    }
+
+    public String getTaxonomia() {
+        return taxonomia;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+    
+    @Override
+    public String mostrarDatos(){
+        
+        return "Raza: "+raza+"\nColor: "+color+"\nTamaño: "+tamaño+"\nHabitad: "+habitad
+                +"\nTaxonomia: "+taxonomia+"\nSexo: "+sexo;
+        
+    }
+}
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+package Animal;
+
+public class Animal_Gato extends Animal{
+    private String taxonomia,sexo;
+
+    public Animal_Gato(String taxonomia, String sexo, String raza, String color, String habitad, int tamaño) {
+        super(raza, color, habitad, tamaño);
+        this.taxonomia = taxonomia;
+        this.sexo = sexo;
+    }
+
+    public String getTaxonomia() {
+        return taxonomia;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+    
+    @Override
+    public String mostrarDatos(){
+        
+        return "Raza: "+raza+"\nColor: "+color+"\nTamaño: "+tamaño+"\nHabitad: "+habitad
+                +"\nTaxonomia: "+taxonomia+"\nSexo: "+sexo;
+        
+    }
+
+}
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+package Animal;
+
+
+public class Animal_Gusano extends Animal{
+    private String taxonomia,sexo;
+
+    public Animal_Gusano(String taxonomia, String sexo, String raza, String color, String habitad, int tamaño) {
+        super(raza, color, habitad, tamaño);
+        this.taxonomia = taxonomia;
+        this.sexo = sexo;
+    }
+
+    public String getTaxonomia() {
+        return taxonomia;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+    
+    @Override
+    public String mostrarDatos(){
+        
+        return "Raza: "+raza+"\nColor: "+color+"\nTamaño: "+tamaño+"\nHabitad: "+habitad
+                +"\nTaxonomia: "+taxonomia+"\nSexo: "+sexo;
+        
+    }
+}
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+package Animal;
+
+public class Mian {
+    public static void main (String []args){
+        Animal animal[] = new Animal[4];
+        
+        animal[0] = new Animal("San Bernardo","Blanco con café","Hogar",70);
+        animal[1] = new Animal_Delfin("Delphinidae","Hembra","Sousa plumbea","Gris","Oceano",6);
+        animal[2] = new Animal_Gato("Felidae","Macho","Egipcio","Rosado","Hogar",46);
+        animal[3] = new Animal_Gusano("Arthropoda","No tienen","Gusano de seda japones","Cebrado amarillo","Tierra",8);
+        
+        for(Animal animales: animal){
+            System.out.println(animales.mostrarDatos());
+            System.out.println("");
+        }
+    }
+}
